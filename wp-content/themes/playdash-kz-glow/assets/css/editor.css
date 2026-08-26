@@ -1,0 +1,25 @@
+/* Editor-only corrections. Merged with main.css + entry-content.css and injected as one
+   inline <style> block for the block-editor iframe - see inc/enqueue.php. */
+.editor-styles-wrapper{
+  background:#0a0d0a;
+  color:#ffffff;
+  font-family:'Inter',-apple-system,'Segoe UI',Arial,sans-serif;
+}
+.editor-styles-wrapper .wp-block{
+  max-width:640px;
+}
+.editor-styles-wrapper .wp-block[data-align="wide"]{
+  max-width:880px;
+}
+.editor-styles-wrapper .wp-block[data-align="full"]{
+  max-width:1180px;
+}
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4{
+  font-family:'Poppins',-apple-system,'Segoe UI',Arial,sans-serif;
+  font-weight:800;
+  color:#ffffff;
+}
+.editor-styles-wrapper a{ color:#a6ea4e; }

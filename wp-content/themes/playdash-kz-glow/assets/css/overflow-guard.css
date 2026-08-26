@@ -1,0 +1,30 @@
+/* ===================================================================
+   overflow-guard.css — Playdash
+   ---------------------------------------------------------------
+   Defensive, sitewide fix: overflow-wrap/word-break are INHERITED CSS
+   properties, so setting them once on <body> protects every text
+   element on the page (headings, paragraphs, chips, badges, etc.)
+   from ever overflowing its container when a field is filled with a
+   very long string that has no spaces to break at. main.css itself is
+   not touched — this only adds a missing safety net on top of it.
+   =================================================================== */
+
+body{
+  overflow-wrap:break-word;
+  word-break:break-word;
+}
+
+/* Belt-and-suspenders for the specific inline-block labels most likely
+   to receive short, hand-typed content (badges, pills, values). */
+.badge,
+.payment-pill,
+.age-badge,
+.trust-item,
+.stat-num,
+.stat-label,
+.btn-download-title,
+.btn-download-sub,
+.sport-tab{
+  overflow-wrap:break-word;
+  word-break:break-word;
+}

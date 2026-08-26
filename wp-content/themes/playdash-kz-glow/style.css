@@ -1,0 +1,12 @@
+/*
+Theme Name: Playdash MY-SG-TH — Neon Glass
+Theme URI: https://playdash55.com/
+Author: SEO.Casino
+Description: English-language Playdash landing theme for the Malaysia / Singapore / Thailand markets, "Neon Glass" visual variant (glass-panel cards, glow accents, pill buttons). Same technical architecture as the other Playdash themes in this family (ACF Gutenberg blocks, Options pages, Polylang, media/redirect/schema handling, inline CSS injection) and the same bundled images/logo/favicon. Content and payment methods reflect Playdash's real MY/SG/TH-market facts (MYR, DuitNow, Touch 'n Go, FPX, GrabPay, ShopeePay). All CSS is injected as a single inline <style> block in <head> (no separate stylesheet request) — see inc/enqueue.php. Polylang-ready, English as the default/only language for now.
+Version: 1.0.0
+Requires at least: 6.4
+Requires PHP: 7.4
+Tested up to: 6.6
+Requires Plugins: advanced-custom-fields-pro
+Text Domain: playdash-kz-glow
+*/

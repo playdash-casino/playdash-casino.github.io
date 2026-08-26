@@ -1,0 +1,348 @@
+/* ===================================================================
+   entry-content.css — Playdash
+   ---------------------------------------------------------------
+   Styling for STANDARD / CORE WordPress Gutenberg blocks (paragraph,
+   heading, list, image, quote, table, columns, buttons, etc.) and the
+   Classic Editor. This file is intentionally separate from main.css:
+   main.css is the approved design CSS and is kept unmodified; this
+   file only covers content the theme's ACF blocks don't already style
+   (Privacy Policy, Terms, Responsible Gambling and any other page
+   edited with the plain WordPress editor).
+
+   Reuses the same design tokens (colors, radii) defined in main.css's
+   :root so generic pages still feel like part of the same site.
+   =================================================================== */
+
+.standard-content-section{
+  padding:88px 24px;
+}
+
+.standard-content,
+.page-generic__body.entry-content,
+.entry-content{
+  max-width:640px;
+  margin:0 auto;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.7;
+}
+
+.entry-content > *:first-child{ margin-top:0; }
+.entry-content > *:last-child{ margin-bottom:0; }
+.entry-content > *{ max-width:100%; }
+.entry-content > .alignwide{ max-width:880px; }
+.entry-content > .alignfull{ max-width:1180px; }
+
+@media (max-width:640px){
+  .standard-content-section{ padding:64px 20px; }
+}
+
+.entry-content p{
+  margin:0 0 1.2em;
+  color:var(--muted);
+}
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6{
+  font-weight:800;
+  color:var(--text);
+  margin:1.4em 0 .6em;
+  line-height:1.25;
+}
+.entry-content h1{ font-size:clamp(28px,3.6vw,40px); }
+.entry-content h2{ font-size:clamp(24px,3vw,32px); }
+.entry-content h3{ font-size:20px; }
+.entry-content h4{ font-size:17px; }
+.entry-content h5{ font-size:15px; text-transform:uppercase; letter-spacing:.06em; }
+.entry-content h6{ font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--primary-2); }
+
+.entry-content a{
+  color:var(--primary-2);
+  text-decoration:underline;
+  text-underline-offset:2px;
+  transition:color .2s ease;
+}
+.entry-content a:hover{ color:var(--text); }
+
+.entry-content ul,
+.entry-content ol{
+  margin:0 0 1.2em;
+  padding-inline-start:1.4em;
+}
+.entry-content ul{ list-style:disc; }
+.entry-content ol{ list-style:decimal; }
+.entry-content li{ margin-bottom:.4em; }
+.entry-content li::marker{ color:var(--primary-2); }
+.entry-content ul ul,
+.entry-content ol ol,
+.entry-content ul ol,
+.entry-content ol ul{ margin:.4em 0 .4em 1em; }
+
+.entry-content img{
+  max-width:100%;
+  height:auto;
+  border-radius:var(--radius-sm);
+  display:block;
+}
+.entry-content figure{ margin:1.6em 0; }
+.entry-content figcaption,
+.entry-content .wp-element-caption{
+  color:var(--dim);
+  font-size:13px;
+  text-align:center;
+  margin-top:.6em;
+}
+
+.entry-content .wp-block-image,
+.entry-content .wp-block-gallery,
+.entry-content .wp-block-media-text,
+.entry-content .wp-block-cover,
+.entry-content .wp-block-embed,
+.entry-content .wp-block-video,
+.entry-content .wp-block-audio,
+.entry-content .wp-block-table,
+.entry-content .wp-block-buttons,
+.entry-content .wp-block-columns,
+.entry-content .wp-block-group,
+.entry-content .wp-block-quote,
+.entry-content .wp-block-pullquote,
+.entry-content .wp-block-details,
+.entry-content .wp-block-file,
+.entry-content .wp-block-search{
+  margin:1.6em 0;
+}
+
+.entry-content .wp-block-image.aligncenter img,
+.entry-content .aligncenter{
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+}
+.entry-content .alignleft{
+  float:left;
+  margin:.3em 1.4em 1em 0;
+}
+.entry-content .alignright{
+  float:right;
+  margin:.3em 0 1em 1.4em;
+}
+.entry-content::after{
+  content:"";
+  display:table;
+  clear:both;
+}
+.entry-content .alignwide{
+  max-width:880px;
+  margin-left:-120px;
+  margin-right:-120px;
+}
+.entry-content .alignfull{
+  max-width:1180px;
+  margin-left:-270px;
+  margin-right:-270px;
+}
+
+/* Cover / media-text blocks */
+.entry-content .wp-block-cover{
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:var(--surface-2);
+}
+.entry-content .wp-block-media-text{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  align-items:center;
+  background:none;
+  max-width:100%;
+  width:100%;
+}
+.entry-content .wp-block-media-text .wp-block-media-text__content{
+  padding:0;
+}
+.entry-content .wp-block-media-text .wp-block-media-text__media img{
+  width:100%;
+  height:auto;
+}
+
+/* Quotes */
+.entry-content blockquote,
+.entry-content .wp-block-quote{
+  border-inline-start:3px solid var(--primary-2);
+  padding:.4em 0 .4em 1.2em;
+  color:var(--text);
+  font-style:italic;
+}
+.entry-content .wp-block-quote cite,
+.entry-content blockquote cite{
+  display:block;
+  margin-top:.6em;
+  font-style:normal;
+  font-size:13px;
+  color:var(--dim);
+}
+.entry-content .wp-block-pullquote{
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:1.2em 0;
+  text-align:center;
+}
+.entry-content .wp-block-pullquote blockquote{
+  border:none;
+  padding:0;
+  font-size:20px;
+}
+
+/* Tables */
+.entry-content table,
+.entry-content .wp-block-table table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:14.5px;
+}
+.entry-content table th,
+.entry-content table td{
+  padding:10px 14px;
+  border-bottom:1px solid var(--border);
+  text-align:left;
+}
+.entry-content table th{
+  color:var(--primary-2);
+  font-weight:700;
+  text-transform:uppercase;
+  font-size:12px;
+  letter-spacing:.05em;
+}
+
+/* Buttons block */
+.entry-content .wp-block-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+.entry-content .wp-block-button__link{
+  display:inline-flex;
+  align-items:center;
+  padding:12px 24px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:14px;
+  background:var(--primary);
+  color:var(--on-primary);
+  text-decoration:none;
+}
+.entry-content .is-style-outline .wp-block-button__link{
+  background:transparent;
+  border:1.5px solid var(--border);
+  color:var(--text);
+}
+
+/* Columns / group */
+.entry-content .wp-block-columns{
+  display:flex;
+  flex-wrap:wrap;
+  gap:24px;
+}
+.entry-content .wp-block-column{ flex:1; min-width:220px; }
+.entry-content .wp-block-group{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:24px;
+}
+
+/* Separator / spacer */
+.entry-content hr,
+.entry-content .wp-block-separator{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:2em 0;
+}
+
+/* Code / preformatted */
+.entry-content code,
+.entry-content .wp-block-code{
+  background:var(--surface-2);
+  border-radius:6px;
+  padding:.15em .4em;
+  font-size:.9em;
+}
+.entry-content pre.wp-block-code{
+  padding:16px;
+  overflow-x:auto;
+}
+
+/* Details / file / search (minor core blocks) */
+.entry-content .wp-block-details{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:14px 18px;
+}
+.entry-content .wp-block-file{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.entry-content .wp-block-file a.wp-block-file__button{
+  padding:8px 16px;
+  border-radius:999px;
+  background:var(--primary);
+  color:var(--on-primary);
+  font-weight:700;
+  font-size:13px;
+  text-decoration:none;
+}
+.entry-content .wp-block-search__input{
+  background:var(--surface-2);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:10px 14px;
+  color:var(--text);
+}
+.entry-content .wp-block-search__button{
+  background:var(--primary);
+  border:none;
+  border-radius:var(--radius-sm);
+  padding:10px 16px;
+  color:var(--on-primary);
+  font-weight:700;
+}
+
+/* Generic (non-Main) page header used by page.php / index.php / 404.php / search.php */
+.page-generic{ padding:0; }
+.page-generic__head,
+.section-head{ max-width:640px; margin:0 auto 32px; }
+.page-generic__title{ font-weight:800; color:var(--text); }
+
+@media (max-width:1000px){
+  .entry-content .wp-block-media-text{ grid-template-columns:1fr; }
+  .entry-content .alignwide,
+  .entry-content .alignfull{ margin-left:0; margin-right:0; max-width:100%; }
+}
+
+/* Desktop only: regular text runs close to the full container width
+   (roughly 2x the 640px mobile/tablet reading column). Wide/full-aligned
+   blocks lose their breakout margins here since there's no room left to
+   go wider than the container itself. */
+@media (min-width:1024px){
+  .standard-content,
+  .page-generic__body.entry-content,
+  .entry-content,
+  .page-generic__head,
+  .section-head{
+    max-width:1180px;
+  }
+  .entry-content > .alignwide,
+  .entry-content > .alignfull{ max-width:1180px; }
+  .entry-content .alignwide,
+  .entry-content .alignfull{
+    max-width:1180px;
+    margin-left:0;
+    margin-right:0;
+  }
+}
